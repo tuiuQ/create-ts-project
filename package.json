@@ -11,7 +11,9 @@
     "prettier:comment": "echo \"自动格式化\"",
     "prettier": "prettier --write \"src/**/*.ts\"",
     "commit:comment": "echo \"引导设置规范化的提交信息\"",
-    "commit": "cz"
+    "commit": "cz",
+    "build:comment": "echo \"构建\"",
+    "build": "npm run eslint && npm run prettier && rm -rf lib && tsc --build"
   },
   "author": "",
   "license": "ISC",
