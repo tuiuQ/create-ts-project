@@ -2,10 +2,11 @@
   "name": "create-ts-project",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "module": "lib/index.esm.js",
   "scripts": {
     "dev:comment": "echo \"启动开发环境\"",
-    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "dev": "set NODE_ENV=development && rollup -c rollup.config.js -w",
     "eslint:comment": "echo \"eslint 代码检查\"",
     "eslint": "eslint --fix src --ext .ts --max-warnings=0",
     "prettier:comment": "echo \"自动格式化\"",
@@ -13,8 +14,9 @@
     "commit:comment": "echo \"引导设置规范化的提交信息\"",
     "commit": "cz",
     "build:comment": "echo \"构建\"",
-    "build": "npm run eslint && npm run prettier && rm -rf lib && tsc --build"
+    "build": "npm run eslint && npm run prettier && rm -rf lib && set NODE_ENV=production && rollup -c rollup.config/js"
   },
+  "types": "lib/index.d.ts",
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -50,7 +52,7 @@
     }
   },
   "lint-staged": {
-    "src/**/*.ts": [
+    "*.ts": [
       "npm run eslint",
       "npm run prettier"
     ]
