@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev:comment": "启动开发环境",
-    "dev": "ts-node-dev --respawn --transpile-only src/index.ts"
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "eslint:comment": "eslint 代码检查",
+    "eslint": "eslint --fix src --ext .ts --max-warnings=0"
   },
   "author": "",
   "license": "ISC",
