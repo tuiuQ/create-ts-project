@@ -29,6 +29,7 @@ const outputMap = [
   {
     file: pkg.main,
     format: "umd",
+    name: pkg.global ? pkg.global : "",
   },
   {
     file: pkg.module,
