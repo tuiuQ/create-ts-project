@@ -4,6 +4,7 @@
   "description": "",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
+  "global": "CTP",
   "scripts": {
     "dev:comment": "echo \"启动开发环境\"",
     "dev": "set NODE_ENV=development && rollup -c rollup.config.js -w",
@@ -14,7 +15,7 @@
     "commit:comment": "echo \"引导设置规范化的提交信息\"",
     "commit": "cz",
     "build:comment": "echo \"构建\"",
-    "build": "npm run eslint && npm run prettier && rm -rf lib && set NODE_ENV=production && rollup -c rollup.config/js"
+    "build": "npm run eslint && npm run prettier && rm -rf lib && set NODE_ENV=production && rollup -c rollup.config.js"
   },
   "types": "lib/index.d.ts",
   "author": "",
